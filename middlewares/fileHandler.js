@@ -4,7 +4,7 @@ const path = require('path')
 module.exports = {
   HandleMultiForm:  Multer({
     fileFilter: (req, file, cb) => {
-      const filetypes = /jpeg|jpg|png/;
+      const filetypes = /jpeg|jpg|png|heic/;
       const mimetype = filetypes.test(file.mimetype);
       const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
 
