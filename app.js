@@ -7,7 +7,7 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
 const db = require('./db');
-const indexRouter = require('./routes');
+const indexRouter = require('./routes/index.route');
 
 //db.connect();
 app.use(cors());
