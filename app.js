@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 const db = require('./db');
 const indexRouter = require('./routes/index.route');
 
-//db.connect();
+db.connect();
 app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());

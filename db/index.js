@@ -13,7 +13,7 @@ const connect = () => {
       dbUrl = process.env.DB_URL_DEVELOPMENT;
       break;
   }
-  mongoose.connect(dbUrl, { useNewUrlParser: true, useCreateIndex: true });
+  mongoose.connect(dbUrl, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
 };
 
 module.exports = {
