@@ -4,7 +4,7 @@ const Category = require('../db/models/RecyclableCategory');
 module.exports = {
   getAll: async () => {
     try {
-      const detectedObjects = DetectedObject.find();
+      const detectedObjects = await DetectedObject.find();
 
       return Promise.resolve(detectedObjects);
     } catch (err) {
