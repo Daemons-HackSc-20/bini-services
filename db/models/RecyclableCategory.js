@@ -7,6 +7,6 @@ const RecyclableCategorySchema = new Schema({
   detected_objects: [{ type: mongoose.Schema.Types.ObjectId, ref: 'DetectedObject' }],
 }, { timestamps: true });
 
-const RecyclableCategory = mongoose.model('RecyclableCategorySchema', RecyclableCategorySchema);
+const RecyclableCategory = mongoose.model('RecyclableCategory', RecyclableCategorySchema);
 
 module.exports = RecyclableCategory;

@@ -3,7 +3,7 @@ const Category = require('../db/models/RecyclableCategory');
 module.exports = {
   getAll: async () => {
     try {
-      const categories = Category.find();
+      const categories = Category.find().populate('detected_objects');
 
       return Promise.resolve(categories);
     } catch (err) {
