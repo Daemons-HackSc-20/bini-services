@@ -5,8 +5,8 @@ module.exports = {
     try {
       const detectedObjects = await DetectedObject.find();
       
-      // todo randomize output
-      return Promise.resolve(detectedObjects[0]);
+      const randomIndex = Math.floor(Math.random()*detectedObjects.length);
+      return Promise.resolve(detectedObjects[randomIndex]);
     } catch (err) {
       return Promise.reject(err);
     }
