@@ -1,5 +1,4 @@
 const DetectedObject = require('../db/models/DetectedObject');
-const Category = require('../db/models/RecyclableCategory');
 
 module.exports = {
   getRandomQuestion: async () => {
@@ -15,9 +14,11 @@ module.exports = {
   submitAnswer: async (objectId, answer) => {
     try {
       let detectedObject = await DetectedObject.findOne({_id: objectId});
+
+      const isRecyclable = detectedObject.is_recyclable ? 'true' : 'false';
+
+      const result = isRecyclable === answer
       
-      const result = detectedObject.is_recyclable == answer;
-    
       return Promise.resolve(result);
     } catch (err) {
       return Promise.reject(err);
